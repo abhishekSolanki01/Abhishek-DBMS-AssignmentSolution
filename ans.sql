@@ -91,9 +91,18 @@ where p.Passenger_name = "Pallavi" and p.Boarding_City="Bangalore" and p.Destina
 
 select distinct Distance
 from PASSENGER 
-order by Distance des 
+order by Distance des ;
 
 -- 10) Display the passenger name and percentage of distance travelled by that passenger
 -- from the total distance travelled by all passengers without using user variables 
 
+select p.Passenger_name, (Count(Distance)* 100 / (Select Count(*) from PASSENGER)) as DistancePercentage
+from PASSENGER p;
+
+
+-- 11) Display the distance, price in three categories in table Price
+-- a) Expensive if the cost is more than 1000
+
+select p.Distance, r.Price 
+from  
 
